@@ -39,7 +39,7 @@ namespace AKQA.Exercise.Web.Controllers
         ///     API post a double number
         /// </summary>
         /// <param name="number"></param>
-        /// <returns></returns>
+        /// <returns>Number As Words</returns>
         [AcceptVerbs(HttpVerbs.Get | HttpVerbs.Post)]
         public JsonResult GetNumberWord(double number)
         {
