@@ -28,7 +28,7 @@ namespace AKQA.Exercise.Web.Controllers
         /// <param name="username"> username </param>
         /// <returns>username/badrequest</returns>
         [AcceptVerbs(HttpVerbs.Get | HttpVerbs.Post)]
-        public JsonResult GetUsername(string username)
+        public JsonResult PostUsername(string username)
         {
             return string.IsNullOrWhiteSpace(username) ?
                     BadRequest("Name shall not be empty") :
@@ -39,9 +39,9 @@ namespace AKQA.Exercise.Web.Controllers
         ///     API post a double number
         /// </summary>
         /// <param name="number"></param>
-        /// <returns></returns>
+        /// <returns>Number As Words</returns>
         [AcceptVerbs(HttpVerbs.Get | HttpVerbs.Post)]
-        public JsonResult GetNumberWord(double number)
+        public JsonResult PostNumberWord(double number)
         {
             var result = _numToWords.ConvertNumToWords(number);
             return Json(result, JsonRequestBehavior.AllowGet);

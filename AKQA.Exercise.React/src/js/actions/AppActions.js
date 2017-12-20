@@ -1,24 +1,39 @@
 import dispatcher from "../dispatcher";
 
 export function updateName(name){
-	fetch('/home/GetUsername?username=' + encodeURIComponent(name)
-	).then(response => response.json())
+
+    fetch('/home/PostUsername', {
+	    method: 'POST',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+	    body: JSON.stringify({
+	    	username : name
+	    })
+	}).then(response => response.json())
     .then((responseJson) => {
-    	dispatcher.dispatch({
+    	console.log(responseJson);
+		dispatcher.dispatch({
 			type: "UPDATE_NAME",
 			name,
 			responseJson
-		});
+		});    	
     })
     .catch((error) => {
         console.error(error);
     });
-
 }
 
 export function updateNumber(number){
-	fetch('/home/GetNumberWord?number=' + number
-	).then(response => response.json())
+	fetch('/home/PostNumberWord', {
+	    method: 'POST',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+	    body: JSON.stringify({
+	    	number : number
+	    })
+	}).then(response => response.json())
     .then((responseJson) => {
     	console.log(responseJson);
 		dispatcher.dispatch({
