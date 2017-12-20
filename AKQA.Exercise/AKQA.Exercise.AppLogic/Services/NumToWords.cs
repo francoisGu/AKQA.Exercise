@@ -72,7 +72,7 @@ namespace AKQA.Exercise.AppLogic.Services
             var lessThanHundred = number % 100;
             // Return the word directly if the number can be found directly in the config
             if (_numberWordConfig.NumberWords.ContainsKey(lessThanHundred))
-                return numberWords + _numberWordConfig.NumberWords[number] + " ";
+                return numberWords + _numberWordConfig.NumberWords[lessThanHundred] + " ";
             var tens = (lessThanHundred / 10) * 10;
             numberWords = numberWords + (_numberWordConfig.NumberWords.ContainsKey(tens) ?
                             _numberWordConfig.NumberWords[tens] + "-" : "");
