@@ -45,7 +45,7 @@ namespace AKQA.Exercise.Web.Tests.Controllers
             HomeController controller = new HomeController(_numToWordsService);
 
             // Act
-            var result = controller.GetUsername("Test");
+            var result = controller.PostUsername("Test");
 
             // Assert
             Assert.AreEqual("Test", result.Data);
@@ -58,7 +58,7 @@ namespace AKQA.Exercise.Web.Tests.Controllers
             HomeController controller = new HomeController(_numToWordsService);
 
             // Act
-            var result = controller.GetNumberWord(1);
+            var result = controller.PostNumberWord(1);
 
             // Assert
             Assert.AreEqual("ONE DOLLAR", result.Data);
