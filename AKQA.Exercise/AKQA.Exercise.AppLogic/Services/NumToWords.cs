@@ -15,6 +15,12 @@ namespace AKQA.Exercise.AppLogic.Services
             _numberWordConfig = numberWordConfig;
         }
 
+        /// <summary>
+        ///     This function is concrate function of INumberToWords interface 
+        ///     It will convert number into words
+        /// </summary>
+        /// <param name="number">number in double</param>
+        /// <returns>a string of number of words</returns>
         public string ConvertNumToWords(double number)
         {
             if (number < NumberDetails.MinNumber || number > NumberDetails.MaxNumber)
@@ -31,6 +37,9 @@ namespace AKQA.Exercise.AppLogic.Services
             return result.Length == 0 ? NumberDetails.ZeroString : result;
         }
 
+        /// <summary>
+        ///     This private function will convert interger into words
+        /// </summary>
         private string ConvertIntegerNum(string str)
         {
             // Check if the number only contain the digit
@@ -58,7 +67,9 @@ namespace AKQA.Exercise.AppLogic.Services
             return result.Trim();
         }
 
-
+        /// <summary>
+        ///     This function will a number which is less than 1000 into words
+        /// </summary>
         private string ConvertHundredsAndTens(int number)
         {
             // Initial String
